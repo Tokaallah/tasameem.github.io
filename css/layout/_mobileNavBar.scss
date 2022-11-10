@@ -1,0 +1,235 @@
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR
+// -----------------------------------------------------------------------------
+.mobile-navbar{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    @include transition;
+
+    .mobile-nav-overlay{
+        width: 100%;
+        height: inherit;
+        background-color: rgba(0, 0, 0, 0.3);
+        @include transition;
+    }
+
+    .mobile-nav-container{
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        left: -300px;
+        top: 0px;
+        bottom: 0px;
+        background: #ffffff;
+        @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+        @include transition;
+        overflow: auto;
+
+        .mobile-nav-btn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+
+            i{
+                font-size: 1.8em;
+                color: #aaaaaa;
+                opacity: 0.5;
+                @include transition;
+
+                &:hover{
+                    opacity: 1;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .logo{
+            width: 100%;
+            height: 80px;
+            display: block;
+            margin: 30px 0px 7px;
+            text-align: center;
+
+            img{
+                width: auto;
+                height: inherit;
+            }
+        }
+
+        .copyrights{
+            width: 100%;
+            display: block;
+            font-size: 1.25em;
+            color: #aaa;
+            text-align: center;
+            line-height: 15px;
+        }
+
+        .social-media{
+            a{
+                font-size: 2em;
+                color: #aaa;
+                @include transition;
+
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        nav{
+            width: 100%;
+
+            ul{
+                width: 100%;
+    
+                li{
+                    width: 100%;
+                    border-top: 1px solid #e8e8e8;
+    
+                    a{
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        padding: 0px 15px;
+                        line-height: 50px;
+                        font-family: $primary-font-family, $secondary-font-family;
+                        font-size: 1.6em;
+                        text-decoration: none;
+                        color: $primary-color;
+                        @include transition;
+                        cursor: pointer;
+    
+                        &:hover{
+                            background: $primary-color;
+                            color: #ffffff;
+                        }
+    
+                        &.active{
+                            background: $secondary-color;
+                            color: #ffffff;
+                            font-weight: 600;
+                        }
+                    }
+    
+                    &.dropdown{
+                        a i{
+                            float: right;
+                            position: relative;
+                            top: 19px;
+                            @include transition;
+                        }
+    
+                        .dropdown-menu{
+                            visibility: hidden;
+                            opacity: 0;
+                            max-height: 0px;
+                            @include transition;
+    
+                            li{
+                                a{
+                                    padding-left: 40px;
+                                }
+                            }
+                        }
+    
+                        &.show{
+                            a i{
+                                @include rotate(180deg);
+                            }
+    
+                            .dropdown-menu{
+                                visibility: visible;
+                                opacity: 1;
+                                max-height: 1000px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.show{
+        visibility: visible;
+        opacity: 1;
+
+        .mobile-nav-overlay{
+            opacity: 1;
+        }
+
+        .mobile-nav-container{
+            @include translate(300px, 0px);
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .mobile-navbar{
+        right: 0;
+        left: auto;
+    
+        .mobile-nav-container{
+            right: -300px;
+            left: auto;
+    
+            .mobile-nav-btn{
+                left: 20px;
+                right: auto;
+    
+                i{
+                    font-size: 1.6em;
+                }
+            }
+    
+            .copyrights{
+                font-size: 1.2em;
+            }
+    
+            nav{
+                ul{
+                    li{
+                        a{
+                            font-size: 1.4em;
+                        }
+        
+                        &.dropdown{
+                            a i{
+                                float: left;
+                            }
+        
+                            .dropdown-menu{
+                                li{
+                                    a{
+                                        padding-right: 40px;
+                                        padding-left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        &.show{
+            .mobile-nav-container{
+                @include translate(-300px, 0px);
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR (RESPONSIVE)
+// -----------------------------------------------------------------------------

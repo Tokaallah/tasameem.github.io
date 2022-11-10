@@ -1,0 +1,190 @@
+// -----------------------------------------------------------------------------
+// CAREER PAGE
+// -----------------------------------------------------------------------------
+.career-page{
+    .position-details{
+        width: calc(100% - 500px);
+
+        .position-summary{
+            width: 100%;
+    
+            .description{
+                p{
+                    margin-top: 15px;
+                }
+            }
+        }
+    
+        .skills-qualifications{
+            width: 100%;
+    
+            .heading{
+                &.title.primary{
+                    margin-top: 11px;
+    
+                    span{
+                        line-height: 24px;
+                        font-size: 0.8em;
+                    }
+    
+                    &::before{
+                        top: -11px;
+                        width: 100px;
+                        height: 45px;
+                    }
+                }
+            }
+    
+            .description{
+                p{
+                    font-size: 1.45em;
+                    line-height: 23px;
+                    margin-top: 15px;
+                    padding-left: 20px;
+                    position: relative;
+    
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 5px;
+                        height: 5px;
+                        background: $secondary-color;
+                        top: 10px;
+                        left: 0px;
+                        @include border-radius(50%);
+                    }
+                }
+            }
+        }
+    }
+
+    .share-apply-to-position{
+        width: 450px;
+
+        .share-via{
+            padding: 25px;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+
+            span{
+                font-size: 1.5em;
+                color: $primary-color;
+                font-weight: 600;
+            }
+
+            a{
+                font-size: 2.4em;
+                color: #aaa;
+                text-decoration: none;
+                @include transition;
+
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .apply-form{
+            padding: 30px;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+
+            .heading{
+                &.title.primary{
+                    margin-top: 11px;
+    
+                    span{
+                        line-height: 24px;
+                        font-size: 0.8em;
+                    }
+    
+                    &::before{
+                        top: -11px;
+                        width: 100px;
+                        height: 45px;
+                    }
+                }
+            }
+
+            form{
+                .form-row{
+                    width: 100%;
+                }
+
+                .submit-btn button[type="submit"]{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CAREER PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .career-page{
+        .position-details{        
+            .skills-qualifications{
+                .description{
+                    p{
+                        font-size: 1.3em;
+                        padding-right: 20px;
+                        padding-left: 0px;
+        
+                        &::before{
+                            right: 0px;
+                            left: auto;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .share-apply-to-position{
+            .share-via{
+                span{
+                    font-size: 1.3em;
+                }
+    
+                a{
+                    font-size: 2.1em;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CAREER PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1100px){
+    .career-page .position-details{
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .career-page .share-apply-to-position{
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .career-page .share-apply-to-position .apply-form form{
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .career-page .share-apply-to-position .apply-form form .form-row{
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .career-page .share-apply-to-position .apply-form form .form-row{
+        width: 100%;
+    }
+}

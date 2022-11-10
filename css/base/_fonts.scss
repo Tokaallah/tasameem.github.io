@@ -1,0 +1,113 @@
+// -----------------------------------------------------------------------------
+// HELVETICA NEUE LT STD FONT FAMILY
+// -----------------------------------------------------------------------------
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-UltLt.eot");
+    src: font("HelveticaNeueLTStd-UltLt.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-UltLt.woff") format("woff"),
+         font("HelveticaNeueLTStd-UltLt.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-UltLt.svg#HelveticaNeueLTStd-UltLt") format("svg"),
+         font("HelveticaNeueLTStd-UltLt.eot?#iefix") format("embedded-opentype");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-Th.eot");
+    src: font("HelveticaNeueLTStd-Th.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-Th.woff") format("woff"),
+         font("HelveticaNeueLTStd-Th.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-Th.svg#HelveticaNeueLTStd-Th") format("svg"),
+         font("HelveticaNeueLTStd-Th.eot?#iefix") format("embedded-opentype");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStdLt.eot");
+    src: font("HelveticaNeueLTStdLt.woff2") format("woff2"),
+         font("HelveticaNeueLTStdLt.woff") format("woff"),
+         font("HelveticaNeueLTStdLt.ttf") format("truetype"),
+         font("HelveticaNeueLTStdLt.svg#HelveticaNeueLTStdLt") format("svg"),
+         font("HelveticaNeueLTStdLt.eot?#iefix") format("embedded-opentype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-Roman.eot");
+    src: font("HelveticaNeueLTStd-Roman.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-Roman.woff") format("woff"),
+         font("HelveticaNeueLTStd-Roman.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-Roman.svg#HelveticaNeueLTStd-Roman") format("svg"),
+         font("HelveticaNeueLTStd-Roman.eot?#iefix") format("embedded-opentype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-Md.eot");
+    src: font("HelveticaNeueLTStd-Md.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-Md.woff") format("woff"),
+         font("HelveticaNeueLTStd-Md.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-Md.svg#HelveticaNeueLTStd-Md") format("svg"),
+         font("HelveticaNeueLTStd-Md.eot?#iefix") format("embedded-opentype");
+    font-weight: 600;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-Bd.eot");
+    src: font("HelveticaNeueLTStd-Bd.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-Bd.woff") format("woff"),
+         font("HelveticaNeueLTStd-Bd.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-Bd.svg#HelveticaNeueLTStd-Bd") format("svg"),
+         font("HelveticaNeueLTStd-Bd.eot?#iefix") format("embedded-opentype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd';
+    src: font("HelveticaNeueLTStd-Blk.eot");
+    src: font("HelveticaNeueLTStd-Blk.woff2") format("woff2"),
+         font("HelveticaNeueLTStd-Blk.woff") format("woff"),
+         font("HelveticaNeueLTStd-Blk.ttf") format("truetype"),
+         font("HelveticaNeueLTStd-Blk.svg#HelveticaNeueLTStd-Blk") format("svg"),
+         font("HelveticaNeueLTStd-Blk.eot?#iefix") format("embedded-opentype");
+    font-weight: 900;
+    font-style: normal
+}
+
+// -----------------------------------------------------------------------------
+// DROID KUFI FONT FAMILY
+// -----------------------------------------------------------------------------
+@font-face {
+    font-family: 'DroidKufi';
+    src: font("DroidKufi-Regular.eot");
+    src: font("DroidKufi-Regular.woff2") format("woff2"),
+         font("DroidKufi-Regular.woff") format("woff"),
+         font("DroidKufi-Regular.ttf") format("truetype"),
+         font("DroidKufi-Regular.svg#DroidKufi-Regular") format("svg"),
+         font("DroidKufi-Regular.eot?#iefix") format("embedded-opentype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'DroidKufi';
+    src: font("DroidKufi-Bold.eot");
+    src: font("DroidKufi-Bold.woff2") format("woff2"),
+         font("DroidKufi-Bold.woff") format("woff"),
+         font("DroidKufi-Bold.ttf") format("truetype"),
+         font("DroidKufi-Bold.svg#DroidKufi-Bold") format("svg"),
+         font("DroidKufi-Bold.eot?#iefix") format("embedded-opentype");
+    font-weight: 900;
+    font-style: normal
+}

@@ -1,0 +1,457 @@
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR
+// -----------------------------------------------------------------------------
+.desktop-navigation-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background: #ffffff;
+    z-index: 999;
+    @include transition;
+
+    &.scrolled{
+        @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+    }
+
+    .logo{
+        width: auto;
+        height: 65px;
+
+        img{
+            width: auto;
+            height: inherit;
+        }
+    }
+
+    .navigation-links{
+        height: inherit;
+
+        ul{
+            height: inherit;
+
+            .hamburger-menu{
+                width: 30px;
+                height: 27px;
+                display: none;
+                position: relative;
+                cursor: pointer;
+
+                span{
+                    width: 30px;
+                    height: 2px;
+                    background: $primary-color;
+                    border-radius: 2px;
+
+                    &::before, &::after{
+                        content: '';
+                        width: 30px;
+                        height: 2px;
+                        position: absolute;
+                        background: $primary-color;
+                        border-radius: 2px;
+                    }
+
+                    &::before{
+                        top: 0px;
+                    }
+
+                    &::after{
+                        bottom: 0px;
+                    }
+                }
+            }
+
+            .first-lvl-link{
+                position: relative;
+                height: inherit;
+
+                .menu-link{
+                    text-decoration: none;
+                    @include transition;
+
+                    svg{
+                        width: 28px;
+                        height: 28px;
+                        position: relative;
+
+                        .hover-circle, path, circle{
+                            @include transition;
+                        }
+                    }
+
+                    span{
+                        font-size: 1.5em;
+                        font-weight: 500;
+                        color: $text-color;
+                        @include transition;
+
+                        .first-lvl-dropdown{
+                            font-size: 0.8em;
+                        }
+                    }
+                }
+
+                &:hover{
+                    .menu-link{
+                        svg{
+                            path{
+                                fill: $primary-color;
+                            }
+
+                            circle{
+                                fill: $primary-color;
+                            }
+
+                            .hover-circle{
+                                cx: 22;
+                                cy: 22;
+                                r: 22;
+                                opacity: 0.05;
+                                fill: $secondary-color;
+                            }
+                        }
+
+                        span{
+                            color: $primary-color;
+                        }
+                    }
+
+                    .second-lvl-menu, .lvl-two-menu{
+                        visibility: visible;
+                        opacity: 1;
+                        @include translate(0px, -20px);
+                    }
+                }
+
+                &.active{
+                    position: relative;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        right: 0px;
+                        width: 100%;
+                        height: 3px;
+                        background: $primary-color;
+                        @include border-radius(3px);
+                        @include transition;
+                    }
+
+                    .menu-link{
+                        svg{
+                            path{
+                                fill: $primary-color;
+                            }
+
+                            circle{
+                                fill: $primary-color;
+                            }
+
+                            .hover-circle{
+                                cx: 22;
+                                cy: 22;
+                                r: 22;
+                                opacity: 0.05;
+                                fill: $secondary-color;
+                            }
+                        }
+
+                        span{
+                            color: $primary-color;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+
+            .second-lvl-menu{
+                width: auto;
+                height: auto;
+                background: #ffffff;
+                position: absolute;
+                top: calc(100% + 20px);
+                left: 0px;
+                visibility: hidden;
+                opacity: 0;
+                @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                @include transition;
+                z-index: 99;
+
+                .sub-menu-link{
+                    width: 100%;
+                    white-space: nowrap;
+                    border-bottom: 1px solid #e2e2e2;
+
+                    a{
+                        width: 100%;
+                        text-decoration: none;
+                        font-size: 1.4em;
+                        color: #555;
+                        font-weight: 500;
+                        @include transition;
+                    }
+
+                    &.arabic a{
+                        font-size: 1.3em;
+                    }
+
+                    &:last-child{
+                        border-bottom: 0px;
+                    }
+
+                    &:hover{
+                        a{
+                            background: $secondary-color;
+                            color: #ffffff;
+                        }
+                    }
+
+                    &.active{
+                        a{
+                            background: $secondary-color;
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            .lvl-two-menu{
+                width: auto;
+                height: auto;
+                background: #ffffff;
+                position: absolute;
+                top: calc(100% + 20px);
+                left: 0px;
+                visibility: hidden;
+                opacity: 0;
+                @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                @include transition;
+
+                .category-menu-link{
+                    width: 100%;
+                    white-space: nowrap;
+                    border-bottom: 1px solid #e2e2e2;
+                    position: relative;
+                    @include transition;
+
+                    &:last-child{
+                        border-bottom: 0px;
+                    }
+
+                    .link{
+                        width: 100%;
+                        text-decoration: none;
+                        font-size: 1.4em;
+                        color: $text-color;
+                        font-weight: 500;
+                        @include transition;
+                    }
+
+                    .sidemenu{
+                        width: 5px;
+                        height: 5px;
+                        border: 1px solid $text-color;
+                        border-top: 0px;
+                        border-left: 0px;
+                        @include rotate(-45deg);
+                        @include transition;
+                    }
+
+                    &:hover{
+                        background: $primary-color;
+
+                        .link{
+                            color: #ffffff;
+                        }
+
+                        .sidemenu{
+                            border-color: #ffffff;
+                        }
+
+                        .lvl-three-menu{
+                            visibility: visible;
+                            opacity: 1;
+                            @include translate(-20px, 0px);
+                        }
+                    }
+
+                    &.active{
+                        background: $primary-color;
+
+                        .link{
+                            color: #ffffff;
+                        }
+
+                        .sidemenu{
+                            border-color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            .lvl-three-menu{
+                width: auto;
+                height: auto;
+                background: #ffffff;
+                position: absolute;
+                top: 0px;
+                left: calc(100% + 20px);
+                visibility: hidden;
+                opacity: 0;
+                @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                @include transition;
+
+                .sub-category-link{
+                    width: 100%;
+                    white-space: nowrap;
+                    border-bottom: 1px solid #e2e2e2;
+                    @include transition;
+
+                    &:last-child{
+                        border-bottom: 0px;
+                    }
+
+                    a{
+                        width: 100%;
+                        text-decoration: none;
+                        font-size: 1.4em;
+                        color: $text-color;
+                        font-weight: 500;
+                        @include transition;
+                    }
+
+                    &:hover{
+                        background: $secondary-color;
+
+                        a{
+                            color: #ffffff;
+                        }
+                    }
+
+                    &.active{
+                        background: $secondary-color;
+
+                        a{
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.hide-lang-switcher{
+        .navigation-links ul .first-lvl-link.language-switcher{
+            display: none;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .desktop-navigation-bar{
+        .navigation-links{
+            ul{
+                .first-lvl-link{
+                    .menu-link{
+                        svg{
+                            @include flip-image;
+                        }
+
+                        span{
+                            font-size: 1.3em;
+    
+                            .first-lvl-dropdown{
+                                font-size: 0.85em;
+                            }
+                        }
+                    }
+                }
+    
+                .second-lvl-menu{
+                    left: auto;
+                    right: 0px;
+    
+                    .sub-menu-link{
+                        a{
+                            font-size: 1.25em;
+                        }
+
+                        &.english a{
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+    
+                .lvl-two-menu{
+                    left: auto;
+                    right: 0px;
+    
+                    .category-menu-link{
+                        .link{
+                            font-size: 1.25em;
+                        }
+    
+                        .sidemenu{
+                            @include rotate(135deg);
+                        }
+
+                        &:hover{
+                            .lvl-three-menu{
+                                @include translate(20px, 0px)
+                            }
+                        }
+                    }
+                }
+    
+                .lvl-three-menu{
+                    left: auto;
+                    right: calc(100% + 20px);
+    
+                    .sub-category-link{
+                        a{
+                            font-size: 1.25em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1330px){
+    .desktop-navigation-bar{
+        height: 70px;
+    }
+
+    .desktop-navigation-bar .logo{
+        height: 55px;
+    }
+
+    .desktop-navigation-bar .navigation-links ul .hamburger-menu,
+    .desktop-navigation-bar .navigation-links ul .first-lvl-link.language-switcher,
+    .desktop-navigation-bar.hide-lang-switcher .navigation-links ul .first-lvl-link.language-switcher{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .desktop-navigation-bar .navigation-links ul .first-lvl-link,
+    .desktop-navigation-bar .navigation-links ul .first-lvl-link.language-switcher .menu-link span{
+        display: none;
+    }
+
+    .desktop-navigation-bar .navigation-links ul .first-lvl-link.language-switcher .menu-link svg{
+        width: 33px;
+        height: 33px;
+    }
+}

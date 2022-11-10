@@ -1,0 +1,100 @@
+// -----------------------------------------------------------------------------
+// IMAGES GALLERY PAGE
+// -----------------------------------------------------------------------------
+.images-gallery-page{
+    .gallery-masonary{
+        width: 100%;
+
+        .gallery-img{
+            height: 300px;
+            margin-bottom: 40px;
+            position: relative;
+            @include border-radius(3px);
+            overflow: hidden;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            cursor: pointer;
+
+            &:nth-child(1n){
+                width: 25%;
+            }
+
+            &:nth-child(2n){
+                width: 40%;
+            }
+
+            &:nth-child(3n){
+                width: 30%;
+            }
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                background: $primary-color;
+                opacity: 0;
+                z-index: 1;
+                @include transition;
+            }
+
+            &::after{
+                content: img('magnify-icon.svg');
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                z-index: 2;
+                top: calc(50% - 20px);
+                left: calc(50% - 20px);
+                @include transition;
+                @include scale(0);
+            }
+
+            &:hover{
+                &::before{
+                    opacity: 0.6;
+                }
+    
+                &::after{
+                    @include scale(1);
+                }
+            }
+        }
+    }
+}        
+
+// -----------------------------------------------------------------------------
+// IMAGES GALLERY PAGE (RTL)
+// -----------------------------------------------------------------------------
+    
+// -----------------------------------------------------------------------------
+// IMAGES GALLERY PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .images-gallery-page .gallery-masonary .gallery-img{
+        width: 48% !important;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .images-gallery-page .gallery-masonary .gallery-img{
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .images-gallery-page .gallery-masonary .gallery-img{
+        width: 100% !important;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .images-gallery-page .gallery-masonary .gallery-img{
+        height: 300px;
+    }
+}

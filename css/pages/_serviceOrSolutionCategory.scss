@@ -1,0 +1,143 @@
+// -----------------------------------------------------------------------------
+// SERVICE OR SOLUTION CATEGORY PAGE
+// -----------------------------------------------------------------------------
+.service-solution-category-page{
+    .description{
+        width: 100%;
+        max-width: 650px;
+        text-align: center;
+    }
+
+    .service-solution-category-list-container{
+        width: 100%;
+
+        .services-solutions-links{
+            text-decoration: none;
+            width: 18%;
+            height: 180px;
+            border: 1px solid #aaaaaa;
+            @include border-radius(3px);
+            background: transparent;
+            @include transition;
+
+            p{
+                position: relative;
+                font-size: 1.4em;
+                line-height: 20px;
+                text-align: center;
+                @include transition;
+
+                &::before{
+                    content: '';
+                    width: 40px;
+                    height: 1.5px;
+                    background: #ffffff;
+                    position: absolute;
+                    top: 0px;
+                    left: calc(50% - 20px);
+                    opacity: 0;
+                    @include transition;
+                }
+            }
+
+            svg{
+                width: 50px;
+                height: 50px;
+                @include transition;
+                position: relative;
+                top: 0px;
+
+                .hover-circle{
+                    @include transition;
+                }
+
+                path{
+                    @include transition;
+                }
+            }
+
+            &:hover{
+                background: $primary-color;
+                border-color: $primary-color;
+
+                p{
+                    color: #ffffff;
+                    @include translate(0px, 10px);
+
+                    &::before{
+                        opacity: 1;
+                        @include translate(0px, -10px);
+                    }
+                }
+    
+                svg{
+                    @include translate(0px, -5px);
+
+                    .hover-circle{
+                        fill: #ffffff;
+                        opacity: 0.2;
+                    }
+
+                    path{
+                        fill: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SERVICE OR SOLUTION CATEGORY PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .service-solution-category-page{
+        .service-solution-category-list-container{
+            .services-solutions-links{
+                svg{
+                    @include flip-image;
+                }
+    
+                p{
+                    font-size: 1.3em;
+                }
+
+                &:hover{
+                    svg{
+                        top: -5px;
+                    }
+                }
+            }
+        }
+    }
+}
+    
+// -----------------------------------------------------------------------------
+// SERVICE OR SOLUTION CATEGORY PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .service-solution-category-page .service-solution-category-list-container .services-solutions-links{
+        width: 30%;
+        margin: 30px 10px 0px;
+    }
+
+    .service-solution-category-page .service-solution-category-list-container{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .service-solution-category-page .service-solution-category-list-container .services-solutions-links{
+        width: 100%;
+        margin: 0px;
+        margin-top: 30px;
+    }
+
+    .service-solution-category-page .service-solution-category-list-container{
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+}

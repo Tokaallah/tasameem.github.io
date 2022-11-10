@@ -1,0 +1,114 @@
+// -----------------------------------------------------------------------------
+// VIDEOS GALLERY PAGE
+// -----------------------------------------------------------------------------
+.videos-gallery-page{
+    .gallery-masonary{
+        width: 100%;
+
+        .gallery-video{
+            height: 300px;
+            margin-bottom: 40px;
+            position: relative;
+            @include border-radius(3px);
+            overflow: hidden;
+            background-position: center center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            cursor: pointer;
+
+            &:nth-child(1n){
+                width: 25%;
+            }
+
+            &:nth-child(2n){
+                width: 40%;
+            }
+
+            &:nth-child(3n){
+                width: 30%;
+            }
+
+            .play-button{
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: calc(50% - 25px);
+                left: calc(50% - 25px);
+                background: rgba(255, 255, 255, 0.8);
+                @include border-radius(50%);
+                @include transition;
+                cursor: pointer;
+                z-index: 5;
+
+                &::before{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    @include border-radius(50%);
+                    @include animation(pulse 2s infinite);
+                    @include transition;
+                }
+
+                i{
+                    font-size: 1.8em;
+                    line-height: 50px;
+                    @include translate(2.5px, 1px);
+                    color: $secondary-color;
+                    @include transition;
+                }
+            }
+
+            &:hover{
+                .play-button{
+                    background: #ffffff;
+
+                    &::before{
+                        @include animation(pulse-colored 2s infinite);
+                    }
+    
+                    i{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}        
+
+// -----------------------------------------------------------------------------
+// VIDEOS GALLERY PAGE (RTL)
+// -----------------------------------------------------------------------------
+    
+// -----------------------------------------------------------------------------
+// VIDEOS GALLERY PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .videos-gallery-page .gallery-masonary .gallery-video{
+        width: 48% !important;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    .videos-gallery-page .gallery-masonary .gallery-video{
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .videos-gallery-page .gallery-masonary .gallery-video{
+        width: 100% !important;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .videos-gallery-page .gallery-masonary .gallery-video{
+        height: 300px;
+    }
+}

@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+.link-style{
+    text-decoration: none;
+    font-family: $primary-font-family, $secondary-font-family;
+    font-size: 1.5em;
+    font-weight: 500;
+    @include transition;
+    @include appearance(none);
+
+    &.primary{
+        color: $primary-color;
+
+        &:hover{
+            color: $secondary-color;
+        }
+    }
+
+    &.secondary{
+        color: $secondary-color;
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+
+    &.with-icon{
+        svg{
+            width: 18px;
+            height: 18px;
+
+            path{
+                @include transition;
+            }
+        }
+
+        &:hover{
+            &.primary{
+                svg{
+                    path{
+                        fill: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.link-btn{
+    height: auto;
+    font-family: $primary-font-family, $secondary-font-family;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5em;
+    padding: 15px 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #ffffff;
+    @include transition;
+    @include border-radius(3px);
+    @include appearance(none);
+
+    &.transparent{
+        background: transparent;
+        color: $primary-color;
+        border-color: $primary-color;
+
+        &:hover{
+            background: $primary-color;
+            color: #ffffff;
+        }
+    }
+
+    &.primary{
+        background: $primary-color;
+        
+        &:hover{
+            background: $secondary-color;
+        }
+    }
+
+    &.secondary{
+        background: $secondary-color;
+        
+        &:hover{
+            background: $primary-color;
+        }
+    }
+
+    &.with-icon{
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+.btn{
+    height: auto;
+    font-family: $primary-font-family, $secondary-font-family;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5em;
+    padding: 15px 20px;
+    border: 0px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    @include transition;
+    @include border-radius(3px);
+    @include appearance(none);
+
+    &.primary{
+        background: $primary-color;
+
+        &:hover{
+            background: $secondary-color;
+        }
+    }
+
+    &.secondary{
+        background: $secondary-color;
+
+        &:hover{
+            background: $primary-color;
+        }
+    }
+
+    &.with-icon{
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .link-btn{
+        padding: 12px 25px;
+        font-size: 1.3em;
+    
+        &.with-icon{
+            svg{
+                @include flip-image;
+            }
+        }
+    }
+    
+    .btn{
+        font-size: 1.3em;
+        padding: 12px 25px;
+    
+        &.with-icon{
+            svg{
+                @include flip-image;
+            }
+        }
+    }
+
+    .link-style{
+        font-size: 1.3em;
+        
+        &.with-icon{
+            svg{
+                @include flip-image;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .link-style, .link-btn, .btn{
+        span{
+            position: relative;
+            top: 2px;
+        }
+    }
+    
+    .rtl .link-style, .rtl .link-btn, .rtl .btn{
+        span{
+            top: 0px;
+        }
+    }
+}

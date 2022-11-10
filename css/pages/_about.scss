@@ -1,0 +1,491 @@
+// -----------------------------------------------------------------------------
+// ABOUT PAGE
+// -----------------------------------------------------------------------------
+.about-page{
+
+    // -----------------------------------------------------------------------------
+    // WHO WE ARE
+    // -----------------------------------------------------------------------------
+    .who-we-are{
+        overflow: hidden;
+
+        .content{
+            width: calc(100% - 550px);
+
+            .description{
+                p{
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        .video-image{
+            width: 500px;
+            height: 400px;
+            position: relative;
+
+            &::before{
+                content: '';
+                width: 90%;
+                height: 90%;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                background: $secondary-color;
+                opacity: 0.1;
+                @include border-radius(3px);
+            }
+
+            .video-img{
+                width: calc(100% - 50px);
+                height: calc(100% - 50px);
+                background-position: center center !important;
+                background-size: cover !important;
+                background-repeat: no-repeat !important;
+                @include border-radius(3px);
+                position: relative;
+                top: 50px;
+                left: 0px;
+            }
+
+            .play-button{
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: calc(50% - 15px);
+                left: calc(50% - 65px);
+                background: rgba(255, 255, 255, 0.8);
+                @include border-radius(50%);
+                @include transition;
+                cursor: pointer;
+                z-index: 5;
+
+                &::before{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    @include border-radius(50%);
+                    @include animation(pulse 2s infinite);
+                    @include transition;
+                }
+
+                i{
+                    font-size: 2.6em;
+                    line-height: 60px;
+                    @include translate(2.5px, 1px);
+                    color: $secondary-color;
+                    @include transition;
+                }
+
+                &:hover{
+                    background: #ffffff;
+
+                    &::before{
+                        @include animation(pulse-colored 2s infinite);
+                    }
+
+                    i{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    .why-choose-us{
+        overflow: hidden;
+
+        .images{
+            width: 550px;
+            height: 600px;
+            position: relative;
+
+            img{
+                @include border-radius(3px);
+
+                &:first-child{
+                    width: 88%;
+                    height: auto;
+                }
+
+                &:last-child{
+                    width: 90%;
+                    height: auto;
+                    position: absolute;
+                    left: 80px;
+                    bottom: -15px;
+                    border: 15px solid #ffffff;
+                }
+            }
+        }
+
+        .content{
+            width: calc(100% - 650px);
+            position: relative;
+
+            .brand-decoration{
+                position: absolute;
+                width: auto;
+                height: 70%;
+                bottom: 0px;
+                right: 0px;
+                opacity: 0.05;
+                
+                img{
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            .title{
+                margin-left: -100px;
+            }
+
+            .description{
+                margin-left: -50px;
+                font-weight: 600;
+            }
+
+            .points{
+                p{
+                    padding-left: 35px;
+                    position: relative;
+                    font-size: 1.4em;
+                    margin-top: 20px;
+
+                    &::before{
+                        content: img('checkmark.svg');
+                        width: 24px;
+                        height: 24px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 1px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // VERBAL IDENTITY
+    // -----------------------------------------------------------------------------
+    .verbal-identity{
+        .verbal-identity-card{
+            width: 48.5%;
+            height: auto;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94, 94, 94, 0.1));
+
+            svg{
+                width: 45px;
+                height: 45px;
+            }
+
+            .title{
+                position: relative;
+                font-size: 1.8em;
+
+                &::after{
+                    content: '';
+                    width: 50px;
+                    height: 2px;
+                    display: block;
+                    background: $secondary-color;
+                    @include border-radius(2px);
+                    position: absolute;
+                    bottom: -10px;
+                }
+            }
+
+            .description{
+                p{
+                    font-size: 1.45em;
+                    line-height: 23px;
+                }
+            }
+
+            &.goals{
+                width: 100%;
+
+                .wrap-icon-title{
+                    width: 140px;
+                    position: relative;
+                    top: -10px;
+                }
+
+                .wrapped-text{
+                    width: calc(100% - 150px);
+
+                    .text-container{
+                        p{
+                            width: 48%;
+                            font-size: 1.45em;
+                            line-height: 23px;
+                            margin: 5px 0px;
+                            padding-left: 20px;
+                            position: relative;
+
+                            &::before{
+                                content: '';
+                                position: absolute;
+                                width: 5px;
+                                height: 5px;
+                                background: $secondary-color;
+                                top: 10px;
+                                left: 0px;
+                                @include border-radius(50%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// ABOUT PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .about-page{
+
+        // -----------------------------------------------------------------------------
+        // WHO WE ARE
+        // -----------------------------------------------------------------------------
+        .who-we-are{    
+            .video-image{
+                &::before{
+                    left: 0px;
+                    right: auto;
+                }
+    
+                .video-img{
+                    right: 0px;
+                    left: auto;
+                }
+    
+                .play-button{
+                    right: calc(50% - 65px);
+                    left: auto;
+                }
+            }
+        }
+        
+        // -----------------------------------------------------------------------------
+        // WHY CHOOSE US
+        // -----------------------------------------------------------------------------
+        .why-choose-us{
+            .images{
+                img{
+                    &:last-child{
+                        right: 80px;
+                        left: auto;
+                    }
+                }
+            }
+    
+            .content{
+                .brand-decoration{
+                    left: 0px;
+                    right: auto;
+                }
+    
+                .title{
+                    margin-right: -100px;
+                    margin-left: 0px;
+                }
+    
+                .description{
+                    margin-right: -50px;
+                    margin-left: 0px;
+                }
+    
+                .points{
+                    p{
+                        padding-right: 35px;
+                        padding-left: 0px;
+    
+                        &::before{
+                            left: auto;
+                            right: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // -----------------------------------------------------------------------------
+        // VERBAL IDENTITY
+        // -----------------------------------------------------------------------------
+        .verbal-identity{
+            .verbal-identity-card{
+                svg{
+                    @include flip-image;
+                }
+    
+                .title{
+                    font-size: 1.6em;
+    
+                    &::after{
+                        width: 30px;
+                    }
+                }
+    
+                .description{
+                    p{
+                        font-size: 1.3em;
+                        line-height: 25px;
+                    }
+                }
+    
+                &.goals{
+                    .wrapped-text{
+                        .text-container{
+                            p{
+                                font-size: 1.3em;
+                                line-height: 25px;
+                                padding-right: 20px;
+                                padding-left: 0px;
+    
+                                &::before{
+                                    right: 0px;
+                                    left: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+    
+// -----------------------------------------------------------------------------
+// ABOUT PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // WHO WE ARE
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .about-page .who-we-are .content{
+            width: 100%;
+        }
+
+        .about-page .who-we-are .video-image{
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .about-page .who-we-are .video-image::before{
+            width: 80%;
+            height: 80%;
+        }
+
+        .about-page .who-we-are .video-image .video-img{
+            width: calc(100% - 25px);
+            height: calc(100% - 25px);
+            top: 25px;
+        }
+    }
+
+    @media only screen and (max-width: 450px){
+        .about-page .who-we-are .video-image{
+            height: 400px;
+        }
+    }
+
+    @media only screen and (max-width: 400px){
+        .about-page .who-we-are .video-image{
+            height: 350px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .about-page .why-choose-us .content{
+            width: 100%;
+            -webkit-box-ordinal-group: 1;
+            -moz-box-ordinal-group: 1;
+            -ms-flex-order: 1; 
+            -webkit-order: 1; 
+            order: 1;
+        }
+
+        .about-page .why-choose-us .content .title,
+        .about-page .why-choose-us .content .description{
+            margin-left: 0px;
+        }
+
+        .rtl .about-page .why-choose-us .content .title,
+        .rtl .about-page .why-choose-us .content .description{
+            margin-right: 0px;
+        }
+
+        .about-page .why-choose-us .images{
+            -webkit-box-ordinal-group: 2;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 2; 
+            -webkit-order: 2; 
+            order: 2;
+            margin: auto;
+            margin-top: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 650px){
+        .about-page .why-choose-us .images{
+            width: 100%;
+            height: auto;
+        }
+
+        .about-page .why-choose-us .images img:first-child{
+            width: 100%;
+        }
+
+        .about-page .why-choose-us .images img:last-child{
+            position: static;
+            width: calc(100% - 30px);
+            margin-top: -50px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // VERBAL IDENTITY
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 900px){
+        .about-page .verbal-identity .verbal-identity-card{
+            width: 100%;
+        }
+
+        .about-page .verbal-identity .verbal-identity-card.goals .wrap-icon-title{
+            width: 100%;
+            padding-bottom: 25px;
+            top: 0px;
+        }
+
+        .about-page .verbal-identity .verbal-identity-card.goals .wrapped-text{
+            width: 100%;
+            padding-top: 0px;
+        }
+
+        .about-page .verbal-identity .verbal-identity-card.goals .wrapped-text .text-container p{
+            width: 100%;
+        }
+    }

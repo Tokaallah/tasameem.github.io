@@ -1,0 +1,248 @@
+// -----------------------------------------------------------------------------
+// FORMS
+// -----------------------------------------------------------------------------
+.form-row{
+    input{
+        width: 100%;
+        height: 48px;
+        padding: 10px 15px;
+        font-family: $primary-font-family, $secondary-font-family;
+        font-size: 1.3em;
+        font-weight: 500;
+        color: $text-color;
+        background: transparent;
+        border: 1px solid #cccdcd;
+        @include border-radius(3px);
+        outline: none;
+        @include transition;
+        line-height: 48px;
+        @include appearance(none);
+    
+        &:focus{
+            border: 1px solid $primary-color;
+        }
+    }
+
+    textarea{
+        width: 100%;
+        height: 120px;
+        padding: 10px 15px;
+        font-family: $primary-font-family, $secondary-font-family;
+        font-size: 1.3em;
+        font-weight: 500;
+        color: $text-color;
+        background: transparent;
+        border: 1px solid #cccdcd;
+        @include border-radius(3px);
+        outline: none;
+        @include transition;
+        line-height: normal;
+        resize: none;
+        @include appearance(none);
+    
+        &:focus{
+            border: 1px solid $primary-color;
+        }
+    }
+
+    &.with-icon{
+        position: relative;
+
+        input{
+            padding-left: 50px;
+        }
+
+        svg{
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            top: 13px;
+            left: 17px;
+        }
+    }
+}
+
+.upload-field{
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    color: $text-color;
+    background: transparent;
+    border: 1px solid #cccdcd;
+    @include border-radius(3px);
+    outline: none;
+    @include transition;
+    line-height: 48px;
+    @include appearance(none);
+    position: relative;
+    cursor: pointer;
+
+    input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .fake-upload{
+        width: 100%;
+        height: 100%;
+
+        .file-name{
+            width: calc(100% - 120px);
+            padding: 10px 15px;
+            overflow: hidden;
+            color: #aaa;
+            text-align: left;
+            font-family: $primary-font-family, $secondary-font-family;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+
+        .choose-file-btn{
+            width: auto;
+            height: 40px;
+            padding: 0px 15px;
+            background: #e2e2e2;
+            color: $text-color;
+            line-height: 40px;
+            @include border-radius(3px);
+            font-family: $primary-font-family, $secondary-font-family;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+    }
+}
+
+.submit-on-one-line{
+    position: relative;
+
+    .form-row{
+        &.with-icon{
+            input{
+                padding-right: 210px;
+            }
+        }
+
+        &:last-child{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        button[type="submit"]{
+            height: 100%;
+            @include appearance(none);
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+}
+
+@include placeholder{
+    font-family: $primary-font-family, $secondary-font-family;
+    font-size: inherit;
+    font-weight: 500;
+    color: #aaaaaa;
+    @include transition;
+}
+
+@include placeholder-focus{
+    color: transparent !important;
+}
+
+// -----------------------------------------------------------------------------
+// FORMS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .form-row{
+        input{
+            font-size: 1.2em;
+        }
+    
+        &.with-icon{
+            input{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+    
+            svg{
+                left: auto;
+                right: 17px;
+            }
+        }
+    }
+    
+    .submit-on-one-line{
+        .form-row{
+            &.with-icon{
+                input{
+                    padding-right: 52px;
+                    padding-left: 230px;
+                }
+            }
+    
+            &:last-child{
+                right: auto;
+                left: 0px;
+            }
+    
+            button[type="submit"]{
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
+    }
+
+    .upload-field{
+        .fake-upload{
+            .file-name{
+                text-align: right;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FORMS (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 600px){
+    .submit-on-one-line .form-row.with-icon input{
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: none;
+        padding-right: 20px !important;
+    }
+
+    .rtl .submit-on-one-line .form-row.with-icon input{
+        padding-right: 52px !important;
+        padding-left: 20px;
+    }
+
+    .submit-on-one-line .form-row:last-child{
+        position: static;
+        width: 100%;
+    }
+
+    .submit-on-one-line .form-row button[type="submit"],
+    .rtl .submit-on-one-line .form-row button[type="submit"]{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}

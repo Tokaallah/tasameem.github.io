@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// REMODAL
+// -----------------------------------------------------------------------------
+.remodal{
+    padding: 0px;
+    margin: 0px;
+    @include border-radius(3px);
+    overflow: hidden;
+    border: none;
+    @include box-shadow(0px, 0px, 15px, 0px, rgba(94, 94, 94, 0.15));
+
+    .modal-body{
+        padding: 30px 45px;
+    }
+}
+
+.remodal-close{
+    left: auto;
+    right: 0;
+    color: #aaa;
+    z-index: 99;
+}
+
+.remodal-close:hover, .remodal-close:focus{
+    color: $primary-color;
+}
+
+.remodal-overlay{
+    background: rgba(0, 0, 0, 0.4);
+}
+
+// -----------------------------------------------------------------------------
+// REMODAL (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .remodal-close{
+        right: auto;
+        left: 0px;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// REMODAL (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 700px){
+    .remodal .modal-body{
+        padding: 30px 25px;
+    }
+}

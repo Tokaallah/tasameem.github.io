@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// PAGINATION
+// -----------------------------------------------------------------------------
+.pagiantion{
+    width: 100%;
+
+    a, span{
+        font-size: 1.5em;
+        font-weight: 500;
+        color: $text-color;
+        line-height: 40px;
+        text-decoration: none;
+        text-align: center;
+        @include transition;
+    }
+
+    a{
+        cursor: pointer;
+        
+        &.active{
+            font-weight: 700;
+            color: $secondary-color;
+            text-decoration: underline;
+        }
+
+        &:hover{
+            color: $primary-color;
+            text-decoration: underline;
+        }
+    }
+
+    .prev, .next{
+        width: 40px;
+        height: 40px;
+        border: 1px solid $secondary-color;
+        @include border-radius(3px);
+        @include transition;
+
+        i{
+            color: $secondary-color;
+            @include transition;
+        }
+
+        &:hover{
+            background: $secondary-color;
+
+            i{
+                color: #ffffff;
+            }
+        }
+
+        &.disabled{
+            cursor: not-allowed;
+            border: 1px solid #d3d3d3;
+
+            i{
+                color: #d3d3d3;
+            }
+
+            &:hover{
+                background: transparent;
+
+                i{
+                    color: #d3d3d3;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// PAGINATION (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    
+}
+
+// -----------------------------------------------------------------------------
+// PAGINATION (RESPONSIVE)
+// -----------------------------------------------------------------------------

@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// LIGHTBOX2
+// -----------------------------------------------------------------------------
+.lightboxOverlay{
+    width: 100% !important;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.lb-data{
+    padding: 0px;
+}
+
+.lb-data .lb-details{
+    margin-top: 10px;
+}
+
+.lb-data .lb-caption{
+    font-family: $primary-font-family, $secondary-font-family;
+    font-weight: 500;
+    font-size: 1.4em;
+}
+
+.lb-data .lb-number{
+    font-family: $primary-font-family, $secondary-font-family;
+    font-weight: 500;
+    font-size: 1.2em;
+    display: none !important;
+}
+
+.lb-data .lb-close{
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-top: 5px;
+}
+
+// -----------------------------------------------------------------------------
+// LIGHTBOX2 (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .lb-data .lb-caption{
+        font-size: 1.2em;
+    }
+
+    .lb-details{
+        float: right;
+        text-align: right;
+    }
+
+    .lb-closeContainer{
+        float: left;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// LIGHTBOX2 (RESPONSIVE)
+// -----------------------------------------------------------------------------

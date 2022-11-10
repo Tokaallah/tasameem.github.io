@@ -1,0 +1,88 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// CONFIRGURATIONS
+// -----------------------------------------------------------------------------
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins',
+  'abstracts/extends';
+
+// -----------------------------------------------------------------------------
+// RESETS
+// -----------------------------------------------------------------------------
+@import
+  'resets/browser',
+  'resets/fonts';
+
+// -----------------------------------------------------------------------------
+// BASE STUFF
+// -----------------------------------------------------------------------------
+@import
+  'base/fonts',
+  'base/base',
+  'base/typography',
+  'base/keyframes',
+  'base/helpers';
+
+// -----------------------------------------------------------------------------
+// VENDORS
+// -----------------------------------------------------------------------------
+@import
+  '../plugins/animate.css/animate.min.css',
+  '../plugins/@fortawesome/fontawesome-free/css/all.min.css',
+  '../plugins/remodal/dist/remodal.css',
+  '../plugins/remodal/dist/remodal-default-theme.css',
+  '../plugins/slick-slider/slick/slick.css',
+  '../plugins/lightbox2/dist/css/lightbox.min.css',
+  '../plugins/modal-video/css/modal-video.min.css',
+  '../plugins/plyr/dist/plyr.css',
+  '../plugins/select2/dist/css/select2.min.css';
+@import
+  'vendors/fontAwsome',
+  'vendors/reModal',
+  'vendors/slickSlider',
+  'vendors/lightBox2',
+  'vendors/modalVideo',
+  'vendors/select2';
+
+// -----------------------------------------------------------------------------
+// LAYOUTS
+// -----------------------------------------------------------------------------
+@import
+  'layout/navBar',
+  'layout/mobileNavBar',
+  'layout/breadcrumb',
+  'layout/footer';
+
+// -----------------------------------------------------------------------------
+// COMPONENTS
+// -----------------------------------------------------------------------------
+@import
+  'components/buttons',
+  'components/forms',
+  'components/preloader',
+  'components/pagination',
+  'components/scrollToTop';
+
+// -----------------------------------------------------------------------------
+// PAGES SPECIFIC STYLES
+// -----------------------------------------------------------------------------
+@import
+  'pages/home',
+  'pages/about',
+  'pages/servicesAndSolutions',
+  'pages/serviceOrSolutionCategory',
+  'pages/serviceOrSolution',
+  'pages/clients',
+  'pages/partners',
+  'pages/news',
+  'pages/article',
+  'pages/media',
+  'pages/imagesGallery',
+  'pages/VideosGallery',
+  'pages/careers',
+  'pages/career',
+  'pages/contact',
+  'pages/errors';

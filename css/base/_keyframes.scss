@@ -1,0 +1,117 @@
+// -----------------------------------------------------------------------------
+// KEYFRAMES
+// -----------------------------------------------------------------------------
+@-webkit-keyframes pulse{
+    0%{
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6)
+    }
+
+    70%{
+        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -ms-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -o-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0)
+    }
+
+    100%{
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0)
+    }
+}
+  
+@keyframes pulse{
+    0%{
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6)
+    }
+
+    70%{
+        -webkit-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -moz-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -ms-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        -o-box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0)
+    }
+
+    100%{
+        -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -ms-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        -o-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0)
+    }
+}
+
+@-webkit-keyframes pulse-colored{
+    0%{
+        -webkit-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -moz-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -ms-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -o-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6)
+    }
+
+    70%{
+        -webkit-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -moz-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -ms-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -o-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        box-shadow: 0 0 0 20px rgba(26, 159, 130, 0)
+    }
+
+    100%{
+        -webkit-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -ms-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -o-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        box-shadow: 0 0 0 0 rgba(26, 159, 130, 0)
+    }
+}
+  
+@keyframes pulse-colored{
+    0%{
+        -webkit-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -moz-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -ms-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        -o-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6);
+        box-shadow: 0 0 0 0 rgba(26, 159, 130, 0.6)
+    }
+
+    70%{
+        -webkit-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -moz-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -ms-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        -o-box-shadow: 0 0 0 20px rgba(26, 159, 130, 0);
+        box-shadow: 0 0 0 20px rgba(26, 159, 130, 0)
+    }
+
+    100%{
+        -webkit-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -moz-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -ms-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        -o-box-shadow: 0 0 0 0 rgba(26, 159, 130, 0);
+        box-shadow: 0 0 0 0 rgba(26, 159, 130, 0)
+    }
+}
+
+// -----------------------------------------------------------------------------
+// KEYFRAMES (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    
+}
+
+// -----------------------------------------------------------------------------
+// KEYFRAMES (RESPONSIVE)
+// -----------------------------------------------------------------------------

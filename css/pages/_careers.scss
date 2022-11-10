@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// CAREERS PAGE
+// -----------------------------------------------------------------------------
+.careers-page{
+    .careers-listing{
+        width: 100%;
+
+        .career-available{
+            width: 48%;
+            height: auto;
+            text-decoration: none;
+            text-align: center;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+            position: relative;
+            @include transition;
+
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: transparent;
+                border: 1px solid $primary-color;
+                top: 0px;
+                left: 0px;
+                opacity: 0;
+                @include transition;
+            }
+
+            &:hover{
+                &::before{
+                    opacity: 1;
+                }
+            }
+
+            .title{
+                width: 100%;
+                color: $text-color;
+                font-size: 2em;
+            }
+
+            .position-type-posted-date{
+                width: 100%;
+                
+                span{
+                    font-size: 1.3em;
+                    color: #aaa;
+                }
+
+                .position-type{
+                    color: $primary-color;
+                }
+            }
+
+            .share-via{
+                width: 100%;
+                position: relative;
+
+                span{
+                    font-size: 1.4em;
+                    color: #aaa;
+                    font-weight: 600;
+                }
+    
+                a{
+                    font-size: 2em;
+                    color: #aaa;
+                    text-decoration: none;
+                    @include transition;
+                    opacity: 0.5;
+    
+                    &:hover{
+                        color: $primary-color;
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .actions{
+                width: 100%;
+                position: relative;
+
+                a{
+                    padding: 12px 20px;
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+
+.vacancy-application-form{
+    max-width: 800px;
+
+    .title.primary{
+        font-size: 2em;
+
+        span{
+            line-height: 30px;
+        }
+    }
+
+    form{
+        .form-row{
+            width: 48%;
+
+            &.submit-btn, &.upload-field{
+                width: 100%;
+
+                button[type="submit"]{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CAREERS PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .careers-page{
+        .careers-listing{
+            .career-available{
+                .title{
+                    font-size: 1.6em;
+                }
+    
+                .position-type-posted-date{
+                    span{
+                        font-size: 1.2em;
+                    }
+                }
+    
+                .share-via{
+                    span{
+                        font-size: 1.2em;
+                    }
+        
+                    a{
+                        font-size: 2em;
+                    }
+                }
+    
+                .actions{
+                    a{
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CAREERS PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 850px){
+    .careers-page .careers-listing .career-available{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .vacancy-application-form form .form-row{
+        width: 100%;
+    }
+}
